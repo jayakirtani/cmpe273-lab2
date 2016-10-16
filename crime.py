@@ -96,7 +96,6 @@ class HelloWorldService(ServiceBase):
 
         #Find top three streets according to highest crimes
         sortedlist =  sorted(crimeatlocation, key=crimeatlocation.__getitem__,reverse=True)
-        #print sorted(crimeatlocation, key=crimeatlocation.__getitem__,reverse=True)
         topstreet=[]
         if (len(sortedlist) >3) :
             topstreet.append(sortedlist[0])
@@ -109,7 +108,6 @@ class HelloWorldService(ServiceBase):
                         "the_most_dangerous_streets" : topstreet,
                         "crime_type_count" : crimetypecount,
                         "event_time_count" : eventtimecount
-                        #,"crime_at_location" : crimeatlocation
         }
         
         return crimeSummary
